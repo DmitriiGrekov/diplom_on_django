@@ -1,0 +1,22 @@
+{% extends 'mainpage/wrapper.html'%}
+{% load crispy_forms_tags %}
+{%block title%}
+
+Регистрация
+{%endblock%}
+{% block content %}
+<div class="content">
+  <div class="container">
+    <div class="row justify-content-center">
+    <form action="" method="post" class='form-group form' style='padding:10px;margin-bottom: 100px;'>
+      {% csrf_token %}
+
+      {{ form|crispy }}
+      <button type="submit"class="button" style="background-color:#000; color:#fff; padding: 8px; border-radius: 10px">Зарегистрироваться</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

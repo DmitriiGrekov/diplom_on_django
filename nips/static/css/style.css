@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    
+}
+
+
+/*Navbar*/
+
+.header{
+    min-height: 120px;
+  
+    padding:15px;
+}
+.header img{
+    height: 90px;
+    
+
+}
+
+.main-menu {
+    color:#4e678a;
+    
+    
+    padding-top: 28px;
+    padding-bottom: 28px;
+    
+
+}
+.main-menu a{
+    line-height: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    
+    
+    
+}
+.main-menu a::after{
+    content: '';
+    width: 100%;
+    display: block;
+    background-color: #ccc;
+    height: 1px;
+    transform: scale(0);
+    transition: all 0.3s;
+
+}
+.main-menu a:hover::after{
+    transform: scale(1);
+}
+
+
+
+.profile{
+    color:#fff;
+    font-size:  16px;
+    text-transform: uppercase;
+    padding: 28px;
+}
+.profile a{
+    line-height: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    
+    
+}
+.profile a:hover{
+    
+    transition:0.5s;
+    
+}
+
+
+
+
+/*content*/
+.content{
+    background-color: #efebe9;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.secondi{
+    display:none;
+}
+.main-content{
+    
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    transition:all 0.6s;
+}
+.main-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    margin-right: -50%;
+    transform: translate(-300%, -50%);
+    padding: 65px 85px 65px 85px;
+    font-size: 20px;
+    
+    background: rgb(37, 36, 36);
+    background: rgba(51, 48, 48, 0.9);
+    color:#fff;
+    text-align: center;
+    font-weight: normal;
+    text-shadow: 0 1px 0 #3e3737;
+    
+    transition:all 0.6s;
+}
+.main-content:hover .main-text{
+    
+    transition:all 0.6s;
+    transform:translate(-50%,-50%);
+    
+}
+.main-content:hover img{
+    transform: scale(1.05);
+    filter: grayscale(0.3);
+    transition:all 0.6s;
+}
+
+.main-content img{
+    width: 100%;
+    transition:all 0.6s;
+}
+.card-img{
+    overflow: hidden;
+}
+.card img{
+    transition: all 0.5s;
+}
+
+.card img:hover{
+    transform: scale(1.2) ;
+    transition: all 0.5s;
+    filter: grayscale(0.3);
+    
+    
+}
+
+
+
+/*footer*/
+
+.footer{
+    padding: 15px;
+
+}
+
+.footer h5{
+    font-size: 16px;
+    
+    font-family: 'Caladea', serif;
+}
+
+.social-link h5{
+    float: right;
+    display: flex;
+    margin-right: 15px;
+    font-size: 30px;
+    color:#6c757d;
+}
+.social-link h5:hover{
+    color:#595e63;
+    cursor: pointer;
+}
+
+/*for tablets and medium desktop*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .header img{
+        height: 60px;
+        
+        
+    
+    }
+   
+    .main-menu {
+        margin: 0px;
+        padding: 25px;
+        margin-bottom: 10px;
+    }
+    .main-menu a {
+        font-size: 16px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    .profile{
+        margin: 0px;
+        padding: 25px;
+        
+    }
+    .profile a{
+        font-size: 16px;
+        padding: 5px ;
+    }
+    .footer{
+        padding: 10px;
+        text-align: center;
+    
+    }
+    
+    .footer h5{
+        font-size: 15px;
+        
+        font-family: 'Caladea', serif;
+    }
+    .social-link{
+        
+        display: flex;
+        justify-content:flex-end;
+        
+    }
+    
+    .social-link h5{
+        text-align: center;
+        
+        
+        font-size: 20px;
+        color:#6c757d;
+    }
+    .social-link h5:hover{
+        color:#595e63;
+        cursor: pointer;
+    }
+}
+
+
+/*for phones*/
+
+@media (max-width: 767px) {
+    .header img{
+        height: 30px;
+        text-align: center;
+        
+    
+    }
+    .secondi {
+        display: block;
+    }
+    .logo{
+        text-align: center;
+    } 
+    .main-menu {
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+    .main-menu a {
+        font-size: 13px;
+        padding: 5px;
+    }
+    .profile{
+        margin: 0px;
+        padding: 0px;
+        border-top: 1px solid #ccc;
+        margin-top: 10px;
+    }
+    .profile a{
+        font-size: 13px;
+        padding: 5px ;
+    }
+    .footer{
+        padding: 5px;
+        text-align: center;
+    
+    }
+    
+    .footer h5{
+        font-size: 10px;
+        
+        font-family: 'Caladea', serif;
+    }
+    .social-link{
+        text-align: center;
+        display: flex;
+        justify-content:center;
+        
+    }
+    
+    .social-link h5{
+        text-align: center;
+        
+        
+        font-size: 15px;
+        color:#6c757d;
+    }
+    .social-link h5:hover{
+        color:#595e63;
+        cursor: pointer;
+    }
+
+}
+
+
+/*players1*/
+.card{
+    margin-bottom: 10px;
+}
+
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header img{
+        height: 50px;
+        text-align: center;
+        
+    
+    }
+    .logo{
+        text-align: center;
+    } 
+    .main-menu {
+        margin: 0px;
+        padding: 0px;
+    }
+    .main-menu a {
+        font-size: 16px;
+        padding: 5px;
+    }
+    .profile{
+        margin: 0px;
+        padding: 0px;
+        border-top: 1px solid #ccc;
+    }
+    .profile a{
+        font-size: 16px;
+        padding: 5px ;
+    }
+    .footer{
+        padding: 5px;
+        text-align: center;
+    
+    }
+    
+    .footer h5{
+        font-size: 15px;
+        
+        font-family: 'Caladea', serif;
+    }
+    .social-link{
+        text-align: center;
+        display: flex;
+        justify-content:center;
+        
+    }
+    
+    .social-link h5{
+        text-align: center;
+        
+        
+        font-size: 20px;
+        color:#6c757d;
+    }
+    .social-link h5:hover{
+        color:#595e63;
+        cursor: pointer;
+    }
+
+
+}
+
+
+
+
+/* Формы */
+
+

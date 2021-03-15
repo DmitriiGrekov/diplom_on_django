@@ -1,0 +1,58 @@
+{% extends 'mainpage/wrapper.html'%}
+{%block title%}
+Главная
+{% endblock %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="content">
+    <div class="container main-content" style='margin-bottom:30px'>
+        <div class="row">
+            <img src="{% static 'img/firstpage/niplarge.jpg_large' %}" alt="">
+
+            <div class="main-text ">
+                <p style='text-transform:uppercase ;' class='text-monospace'>Ninjas in Pyjamas</p>
+                <p style='text-transform:uppercase ;' class='text-monospace'>always in our hearts</p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="container main-content " style = 'margin-bottom:50px'>
+        <div class="row secondi">
+            <img src="{% static 'img/firstpage/загружено (1).jpeg' %}" alt="">
+
+            <div class="main-text ">
+                <p style='text-transform:uppercase ;' class='text-monospace'>Ninjas in Pyjamas</p>
+                <p style='text-transform:uppercase ;' class='text-monospace'>Always win</p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+     <div class="container">
+    {% if sent %}
+    <h5>Сообщение успешно доставлено</h5>
+    {% if name%}
+    <h5>Спасибо за отзыв {{name}}</h5>
+    {% endif %}
+
+{% else %}
+    <h3>Оставьте ваш отзыв</h3>
+    <form action="" method="post">
+        {{ form|crispy }}
+        {% csrf_token %}
+        <input class= "button" style="color:#fff; background-color: #000; padding: 8px; border-radius: 10px; "type="submit" value="ОТПРАВИТЬ">
+    </form>
+{% endif %}
+   </div>
+
+</div>
+
+{% endblock %}

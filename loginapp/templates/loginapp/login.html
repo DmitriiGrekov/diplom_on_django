@@ -1,0 +1,22 @@
+{% extends 'mainpage/wrapper.html'%}
+{%block title%}
+
+Страница авторизации
+
+{%endblock%}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content">
+  <div class="container justify-content-center">
+    <div class="row justify-content-center">
+      <form action="" method="post" style = 'margin-bottom: 300px;'>
+        {% csrf_token %}
+        <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+        {{ form|crispy }}
+        <button type="submit" class="button" style= "background-color: #000; color:#fff; padding: 8px; border-radius: 10px ">Войти</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

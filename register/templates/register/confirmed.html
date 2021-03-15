@@ -1,0 +1,19 @@
+{% extends 'mainpage/wrapper.html'%}
+
+
+{% block content %}
+
+<div class="container" style = 'margin-bottom: 140px; margin-top: 50px;'>
+    <div class="jumbotron">
+        <h1 class="display-4">Спасибо большое за регистрацию</h1>
+        <p class="lead">Ваши данные мы отправили на ваш email</p>
+        <hr class="my-4">
+        <p>Ваш логин: {{name}}</p>
+        <p>Ваш пароль: {{pass}}</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/login" role="button">Войти</a>
+        </p>
+      </div>
+</div>
+{% endblock %}
+

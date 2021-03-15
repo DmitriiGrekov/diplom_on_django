@@ -1,0 +1,32 @@
+{% extends 'mainpage/wrapper.html'%}
+
+{%block title%}
+
+Игроки
+{%endblock%}
+{% block content %}
+
+<div class="content">
+    <div class="container">
+
+      <div class="row">
+
+                {% for player in all_players %}
+                <div class="col-lg-4 d-flex align-items-stretch">
+                  <div class="card" >
+                    <div class="card-img"><img src="{{player.mainimg}}" class="card-img-top" alt="..."></div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{player.name}}</h5>
+                      <p class="card-text">{{player.shortdescription}}</p>
+                      <a href="{% url 'players:detail' player.id%}"class="button" style="text-decoration:none; background-color:#000; color:#fff; padding:10px; border-radius:5px">Читать</a>
+                    </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

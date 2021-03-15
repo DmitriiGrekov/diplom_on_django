@@ -1,0 +1,125 @@
+{% extends 'mainpage/wrapper.html'%}
+{%block title%}
+{{p.name}}
+
+
+{%endblock%}
+{% block content %}
+<div class="content">
+    <div class="container" style = 'text-align:center;'>
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card" >
+                    <div class="card-img"><img class="card-img-top" src="{{p.img1}}" alt="Card image cap"></div>
+
+                  </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card" >
+                    <div class="card-img"><img class="card-img-top" src="{{p.img2}}" alt="Card image cap"></div>
+
+                  </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card" >
+                    <div class="card-img"><img class="card-img-top" src="{{p.img3}}" alt="Card image cap"></div>
+
+                  </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card" >
+                    <div class="card-img"><img class="card-img-top" src="{{p.img4}}" alt="Card image cap"></div>
+
+                  </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card" >
+                    <div class="card-img"><img class="card-img-top" src="{{p.img5}}" alt="Card image cap"></div>
+
+                  </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card" >
+                    <div class="card-img"><img class="card-img-top" src="{{p.img6}}" alt="Card image cap"></div>
+
+                  </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="players-name">
+                    <h3>{{p.name}}</h3>
+                </div>
+            </div>
+            <div class="col-xl-12 text-dark">
+                <p>{{p.description}}</p>
+            </div>
+            <div class="col-xl-12" style = 'margin-bottom:40px'>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{p.videp}}" allowfullscreen></iframe>
+                  </div>
+            </div>
+
+
+
+
+                {% if comment_list %}
+
+                {% for c in comment_list%}
+                <div class ='row'>
+
+
+                <div class="card" style="padding:0;width:15rem;margin-bottom:15px;margin-right:300px">
+  <div class="card-body">
+      <h5 class="card-title">{{c.comment_name}}</h5>
+      <p class="card-text">{{c.comment_text}}</p>
+  </div>
+</div>
+
+                </div>
+
+            <br/>
+            <br/>
+            {% endfor %}
+
+            {%else%}
+            Комментариев нет
+
+            {% endif%}
+
+            </br>
+            </br>
+
+    {% if request.user.is_authenticated%}
+    <form action = '{% url 'players:leave_comment' p.id%}' method ='post'>
+                {%csrf_token%}
+
+  <div class="form-group">
+
+    <label for="exampleInputEmail1">Имя</label>
+    <input type="text" class="form-control"readonly  value ='{{user.first_name}}' id="exampleInputEmail1"name ='name' aria-describedby="emailHelp">
+
+
+
+</div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Текст комментария</label>
+    <textarea  class="form-control"name ='text' id="exampleInputPassword1"></textarea>
+  </div>
+  <button type="submit" style="background-color:#000; color:#fff; padding: 8px; border-radius:10px" class="button">Отправить</button>
+</form>
+
+    {%endif%}
+
+
+
+
+        </div>
+    </div>
+</div
+</div>
+
+
+
+{% endblock %}

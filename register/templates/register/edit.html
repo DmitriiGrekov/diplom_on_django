@@ -1,0 +1,21 @@
+{% extends "mainpage/wrapper.html" %}
+
+{% block title %}Edit your account{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class='content'>
+<div class ='container'>
+    <h1>Редактировать свой аккаунт</h1>
+    <p>Форма редактирования профиля</p>
+    <form action="" method="post" >
+        {{ user_form|crispy }}
+        {{ profile_form|crispy }}
+        {% csrf_token %}
+        <p><input type="submit"class = 'btn btn-success' value="Сохранить изменения"></p>
+    </form>
+
+</div>
+</div>
+{% endblock %}
+
